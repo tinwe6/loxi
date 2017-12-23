@@ -31,6 +31,7 @@ $(TARGET): $(OBJECTS)
 	$(CC) $(CFLAGS) $^ -o $@
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c $(HEADERS)
+	mkdir -p $(BUILD_DIR)
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 .PHONY: clean
